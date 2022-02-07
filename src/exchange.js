@@ -1,3 +1,17 @@
 export default class CurrencyExchange {
-  /*GET https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD\*this is api https call for later use*/
+  static getExchange(usd) {
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const url = `https://v6.exchangerate-api.com/v6/appid=${process.env.API_KEY}/latest/USD`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response)
+        }
+      }
+      request.open("GET, url, true");
+      request.send();
+    });
+  }
 }

@@ -12,9 +12,10 @@ $(document).ready(function () {
     event.preventDefault();
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {
-      console.log("inside then");
-      console.log(response);
-      console.log(test);
+      const body = JSON.parse(response)
+      console.log(typeof body["conversion_rates"].USD);
+      console.log("response ", body["conversion_rates"]);
+      console.log("test var ", test);
     }, function (error) {
       console.log(error);
     });

@@ -10,7 +10,6 @@ export default class CurrencyExchange {
         console.log(this);
         if (this.status === 200) {
           resolve(request.response);
-          console.log("hello");
         } else {
           reject(request.response)
         }

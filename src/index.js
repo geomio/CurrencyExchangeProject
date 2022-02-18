@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './exchange.js'
 
-async function /*replace a with api call name here*/a() {
+function math(usdNum, isoNum) {
+  return usdNum * isoNum;
 }
 
 $(document).ready(function () {
@@ -15,7 +16,12 @@ $(document).ready(function () {
       const body = JSON.parse(response)
       console.log(typeof body["conversion_rates"].USD);
       console.log("response ", body["conversion_rates"]);
-      console.log("test var ", test);
+      const userUsdSelection = $("input[name='usdTotal']").val();
+      const isoCode = $("input[name='isoSelect']").val();
+      console.log(userUsdSelection);
+      console.log(isoCode);
+      let userMathNumber = math(userUsdSelection, 10);
+      console.log("change me ", userMathNumber);
     }, function (error) {
       console.log(error);
     });

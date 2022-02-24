@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyExchange from './exchange.js'
+import CurrencyExchange from './exchange.js';
 
 function math(firstNum, secondNum) {
   return firstNum * secondNum;
@@ -13,9 +13,10 @@ $(document).ready(function () {
     event.preventDefault();
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {
-      const body = JSON.parse(response)
+      const body = JSON.parse(response);
+      console.log(body["conversion_rates"]);
       const userUsdSelection = $("input[name='usdTotal']").val();
-      const isoCode = $("input[name='isoSelect']").val();
+      const isoCode = $("input[name='isoSelect']").val().toUpperCase();
       let isoMathNumber = body["conversion_rates"][isoCode];
       let convertedCurrencyNumber = math(userUsdSelection, isoMathNumber);
       $('#usdAmount').show();
@@ -26,7 +27,9 @@ $(document).ready(function () {
         $('#isoNumberAmount').text("Iso Code Not Recognized Please ReEnter ISO");
       } else {
         $('#isoNumberAmount').text(convertedCurrencyNumber);
-      };
+      }
+      $("#useableIso").toggle();
+      $("#isoIdHtmlText").toggle();
     }, function (error) {
       console.log(error);
     });

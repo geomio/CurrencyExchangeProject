@@ -25,6 +25,11 @@ $(document).ready(function () {
       console.log("should show conversion number", isoMathNumber);
       let convertedCurrencyNumber = math(userUsdSelection, isoMathNumber);
       console.log("convertLog ", convertedCurrencyNumber);
+      $('#usdAmount').show();
+      $('#convertAmount').show();
+      $('#usdNumberAmount').text(userUsdSelection);
+      $('#isoSelectionPrint').text(isoCode);
+      $('#isoNumberAmount').text(convertedCurrencyNumber);
     }, function (error) {
       console.log(error);
     });

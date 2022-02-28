@@ -5,8 +5,11 @@
   <title>Currency Exchange App</title>
 </head>
 
+<h5 id="startText">Press start below</h5>
+<button id="start">start</button>
+
 <body>
-  <div class="container">
+  <div class="container" id="mainBody">
 
     <div class="panel" id="formPanel">
       <div class="panel-body">
@@ -25,10 +28,6 @@
     </h6>
     <h7>check below for iso codes for converting</h7>
 
-
-
-
-
     <div class="panel" id="usdAmount">
       <div class="panel-body">
         <h1>USD Amount</h1>
@@ -42,11 +41,10 @@
         <p><span id="isoNumberAmount"></span></p>
       </div>
     </div>
-    <h1 id="isoIdHtmlText">Useable iso codes:Note not all may work.</h1>
+    <h1 id="isoIdHtmlText">click me to show/hide useable iso codes.</h1>
     <div class="row" id="useableIso">
       <div class="col-sm-4">
         <ul id="isoApiCodes">
-
         </ul>
       </div>
     </div>

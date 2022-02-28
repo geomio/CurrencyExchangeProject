@@ -16,30 +16,38 @@ function outputIsoCodes(object) {
   })
 }
 
+function isoListener() {
+  $("#isoIdHtmlText").on("click", function () {
+    $("#useableIso").toggle();
+  });
+}
+
 $(document).ready(function () {
-  $('#userSelectionForm').submit(function (event) {
-    event.preventDefault();
+  $("#start").click(function () {
+    $("#startText").hide();
+    $("#start").hide();
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {
       const body = JSON.parse(response);
+      $("#mainBody").show();
+      isoListener();
       outputIsoCodes(body["conversion_rates"]);
-      console.log(body["conversion_rates"]);
-      const userUsdSelection = $("input[name='usdTotal']").val();
-      const isoCode = $("input[name='isoSelect']").val().toUpperCase();
-      let isoMathNumber = body["conversion_rates"][isoCode];
-      let convertedCurrencyNumber = math(userUsdSelection, isoMathNumber);
-      $('#usdAmount').show();
-      $('#convertAmount').show();
-      $('#usdNumberAmount').text(userUsdSelection);
-      $('#isoSelectionPrint').text(isoCode);
-      if (isNaN(convertedCurrencyNumber)) {
-        $('#isoNumberAmount').text("Iso Code Not Recognized Please ReEnter ISO");
-      } else {
-        $('#isoNumberAmount').text(convertedCurrencyNumber);
-      }
-      // add new click function or event listener on html to show iso codes/ fix toggle below
-      $("#useableIso").toggle();
-      $("#isoIdHtmlText").toggle();
+      $('#userSelectionForm').submit(function (event) {
+        event.preventDefault();
+        const userUsdSelection = $("input[name='usdTotal']").val();
+        const isoCode = $("input[name='isoSelect']").val().toUpperCase();
+        let isoMathNumber = body["conversion_rates"][isoCode];
+        let convertedCurrencyNumber = math(userUsdSelection, isoMathNumber);
+        $('#usdAmount').show();
+        $('#convertAmount').show();
+        $('#usdNumberAmount').text(userUsdSelection);
+        $('#isoSelectionPrint').text(isoCode);
+        if (isNaN(convertedCurrencyNumber)) {
+          $('#isoNumberAmount').text("Iso Code Not Recognized Please ReEnter ISO");
+        } else {
+          $('#isoNumberAmount').text(convertedCurrencyNumber);
+        }
+      });
     }, function (error) {
       console.log(error);
     });

@@ -9,3 +9,11 @@ body {
 #usdAmount {
   display: none;
 }
+
+#mainBody {
+  display: none;
+}
+
+#useableIso {
+  display: none;
+}

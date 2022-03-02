@@ -17,3 +17,11 @@ body {
 #useableIso {
   display: none;
 }
+
+#pageTitle {
+  text-align:center;
+}
+
+#centerButton {
+  text-align: center;
+}

@@ -1,4 +1,3 @@
-// var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;// change this later
 export default class CurrencyExchange {
   static getExchange() {
     return new Promise(function (resolve, reject) {
@@ -16,10 +15,3 @@ export default class CurrencyExchange {
     });
   }
 }
-
-// let test = CurrencyExchange.getExchange();
-// test.then(function (response) {
-//   console.log(response);
-// }, function (error) {
-//   console.log(error);
-// });

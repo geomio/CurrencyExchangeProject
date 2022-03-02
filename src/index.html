@@ -5,8 +5,15 @@
   <title>Currency Exchange App</title>
 </head>
 
-<h5 id="startText">Press start below</h5>
-<button id="start">start</button>
+<H1 id="pageTitle">USD Currency Converter</H1>
+
+<br>
+
+<div id="centerButton">
+  <button id="start">Click here to start</button>
+</div>
+
+<br>
 
 <body>
   <div class="container" id="mainBody">
@@ -19,14 +26,22 @@
           <label for="newCurrencey">Type desired ISO currency code for USD to be converted to, such as EUR =
             euros</label>
           <input type="text" id="isoCode" name="isoSelect" maxlength="3" pattern="[a-zA-Z]*"><br>
-          <button type="submit">Calculate</button>
+          <br>
+          <button type="submit">Convert</button>
         </form>
       </div>
     </div>
 
+    <br>
+
     <h6>ISO Info: This is using Alpha 3 ISO codes. They are made of three characters, uppercase, no numbers or symbols
     </h6>
+
+    <br>
+
     <h7>check below for iso codes for converting</h7>
+
+    <br>
 
     <div class="panel" id="usdAmount">
       <div class="panel-body">
@@ -41,7 +56,9 @@
         <p><span id="isoNumberAmount"></span></p>
       </div>
     </div>
+
     <h1 id="isoIdHtmlText">click me to show/hide useable iso codes.</h1>
+
     <div class="row" id="useableIso">
       <div class="col-sm-4">
         <ul id="isoApiCodes">

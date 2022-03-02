@@ -10,10 +10,10 @@ function math(firstNum, secondNum) {
 
 function outputIsoCodes(object) {
   $("#isoApiCodes").html("");
-  let isoObjectKeys = Object.keys(object)
+  let isoObjectKeys = Object.keys(object);
   isoObjectKeys.forEach(isocode => {
-    $("#isoApiCodes").append(`<li>${isocode}</li>`)
-  })
+    $("#isoApiCodes").append(`<li>${isocode}</li>`);
+  });
 }
 
 function isoListener() {
@@ -53,5 +53,3 @@ $(document).ready(function () {
     });
   });
 });
-
-// body["conversion_rates"].USD <-area of api object where iso info is stored change USD To other iso if needing to see other prices

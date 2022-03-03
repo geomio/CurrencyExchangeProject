@@ -19,33 +19,37 @@ Needed
 1.Working internet connection
 2.a code editor such as Visual Studio Code 
 3.A git terminal such as Git bash
+4.Node needs to be installed
 
 ## instructions/ add api instruction for user
 
-1.
-2.open git terminal and navigate to empty folder or desktop
-3.clone using git terminal git clone url https://github.com/geomio/CurrencyExchangeProject.git
-4.You need to go to hkfgjhfgjhj and register for a free api code. It should look like a random combo of letters and numbers 00a00a000a000a00000a00aa - this example api will not work
-5.in the root folder make .env file
-6.in env file add API_KEY=00a00a000a000a00000a00aa
+1.Check out my github page for current project updates https://github.com/geomio
+2.Open git terminal and navigate to empty folder or desktop
+3.Clone using git terminal git clone url https://github.com/geomio/CurrencyExchangeProject.git
+4.You need to go to https://www.exchangerate-api.com/ and register for a free api code. It should look like a random combo of letters and numbers 00a00a000a000a00000a00aa - this example api will not work
+5.navigate to root folder using terminal make .env file
+6.In env file using code editor add API_KEY="replace with your api key"
+7.save project
+8.in root file directory open git terminal
+9.run npm install in git terminal
+10.run npm start to open project in browser
+11.when project opens click start button
+12.enter amount of us dollars whole amount and three letter all caps ISO code
+13.click convert to have results displayed on html page
+14.user can click the text in html that says -click me to show/hide useable iso codes- to toggle available iso codes from api
+15.user can type different ISO codes, USD number amounts and click convert again to see different conversions
+16.User can clear and reset page by refreshing browser.
+
 
 # Known Bugs
-I have not tested this project on apple products or android, and may have issues but should be find for mac users.
+1.I have not tested this project on apple products or android, and may have issues but should be find for mac users.
+2.On small displays text may be hard to read.
 
 
 # contact details
 
-  
-
-*Check is on my github page.
-
-  
-
-## Technologies Used
-
-  
-
-  
+*Check contact info on my github page.
 
 # License
 
+CC0 LICENSE FREE FOR USE

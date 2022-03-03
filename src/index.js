@@ -17,8 +17,8 @@ function outputIsoCodes(object) {
 }
 
 function isoHtmlListener() {
-  $("#isoIdHtmlText").on("click", function () {
-    $("#useableIso").toggle();
+  $("#iso-html-text").on("click", function () {
+    $("#useable-iso").toggle();
   });
 }
 
@@ -29,17 +29,17 @@ $(document).ready(function () {
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {
       const body = JSON.parse(response);
-      $("#mainBody").show();
+      $("#main-body").show();
       isoHtmlListener();
       outputIsoCodes(body["conversion_rates"]);
-      $('#userSelectionForm').submit(function (event) {
+      $('#user-selection-form').submit(function (event) {
         event.preventDefault();
         const userUsdSelection = $("input[name='usdTotal']").val();
         const isoCode = $("input[name='isoSelect']").val().toUpperCase();
         let isoMathNumber = body["conversion_rates"][isoCode];
         let convertedCurrencyNumber = math(userUsdSelection, isoMathNumber);
-        $('#usdAmount').show();
-        $('#convertAmount').show();
+        $('#usd-amount').show();
+        $('#convert-amount').show();
         $('#usdNumberAmount').text(userUsdSelection);
         $('#isoSelectionPrint').text(isoCode);
         if (isNaN(convertedCurrencyNumber)) {

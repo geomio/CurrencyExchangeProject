@@ -5,11 +5,11 @@
   <title>Currency Exchange App</title>
 </head>
 
-<H1 id="pageTitle">USD Currency Converter</H1>
+<H1 id="page-title-center">USD Currency Converter</H1>
 
 <br>
 
-<div id="centerButton">
+<div id="center-button">
   <button id="start">Click here to start</button>
 </div>
 
@@ -17,15 +17,15 @@
 
 <body>
 
-  <div class="container" id="mainBody">
-    <div class="panel" id="formPanel">
+  <div class="container" id="main-body">
+    <div class="panel">
       <div class="panel-body">
-        <form id="userSelectionForm">
-          <label for="usdAmount">Amount of US Dollars</label>
-          <input type="text" id="usdInputAmount" name="usdTotal"><br>
-          <label for="newCurrencey">Type desired ISO currency code for USD to be converted to, such as EUR =
+        <form id="user-selection-form">
+          <label for="usd-amount">Amount of US Dollars</label>
+          <input type="text" name="usdTotal"><br>
+          <label for="new-currencey">Type desired ISO currency code for USD to be converted to, such as EUR =
             Euros</label>
-          <input type="text" id="isoCode" name="isoSelect" maxlength="3" pattern="[a-zA-Z]*"><br>
+          <input type="text" name="isoSelect" maxlength="3" pattern="[a-zA-Z]*"><br>
           <br>
           <button type="submit">Convert</button>
         </form>
@@ -41,20 +41,20 @@
 
     <h7>check below for iso codes for converting</h7>
     <br>
-    <div class="panel" id="usdAmount">
+    <div class="panel" id="usd-amount">
       <div class="panel-body">
         <h1>USD Amount</h1>
         <p>$<span id="usdNumberAmount"></span></p>
       </div>
     </div>
-    <div class="panel" id="convertAmount">
+    <div class="panel" id="convert-amount">
       <div class="panel-body">
         <h1><span id="isoSelectionPrint"> Amount</span></h1>
         <p><span id="isoNumberAmount"></span></p>
       </div>
     </div>
-    <h1 id="isoIdHtmlText">click me to show/hide useable iso codes.</h1>
-    <div class="row" id="useableIso">
+    <h1 id="iso-html-text">click me to show/hide useable iso codes.</h1>
+    <div class="row" id="useable-iso">
       <div class="col-sm-4">
         <ul id="isoApiCodes">
         </ul>

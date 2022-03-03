@@ -2,26 +2,23 @@ body {
   background-color: rgb(190, 255, 177);
 }
 
-#convertAmount {
+#convert-amount {
   display: none;
 }
 
-#usdAmount {
+#usd-amount {
   display: none;
 }
 
-#mainBody {
+#main-body {
   display: none;
 }
 
-#useableIso {
+#useable-iso {
   display: none;
 }
 
-#pageTitle {
-  text-align:center;
-}
 
-#centerButton {
+#center-button, #page-title-center {
   text-align: center;
 }

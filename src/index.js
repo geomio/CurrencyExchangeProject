@@ -16,7 +16,7 @@ function outputIsoCodes(object) {
   });
 }
 
-function isoListener() {
+function isoHtmlListener() {
   $("#isoIdHtmlText").on("click", function () {
     $("#useableIso").toggle();
   });
@@ -30,7 +30,7 @@ $(document).ready(function () {
     test.then(function (response) {
       const body = JSON.parse(response);
       $("#mainBody").show();
-      isoListener();
+      isoHtmlListener();
       outputIsoCodes(body["conversion_rates"]);
       $('#userSelectionForm').submit(function (event) {
         event.preventDefault();

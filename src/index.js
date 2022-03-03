@@ -24,7 +24,6 @@ function isoHtmlListener() {
 
 $(document).ready(function () {
   $("#start").click(function () {
-    $("#startText").hide();
     $("#start").hide();
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {

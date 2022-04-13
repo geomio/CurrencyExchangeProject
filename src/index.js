@@ -48,7 +48,7 @@ $(document).ready(function () {
         }
       });
     }, function (error) {
-      console.log(error);
+      $('#error-message').html(error);
     });
   });
 });

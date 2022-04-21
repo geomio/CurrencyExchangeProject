@@ -25,10 +25,11 @@ function isoHtmlListener() {
 $(document).ready(function () {
   $("#start").click(function () {
     $("#start").hide();
+    $("#main-body").show();
     let test = CurrencyExchange.getExchange();
     test.then(function (response) {
       const body = JSON.parse(response);
-      $("#main-body").show();
+
       isoHtmlListener();
       outputIsoCodes(body["conversion_rates"]);
       $('#user-selection-form').submit(function (event) {
@@ -48,7 +49,13 @@ $(document).ready(function () {
         }
       });
     }, function (error) {
-      $('#error-message').html(error);
+      let messageObject = JSON.parse(error);
+      console.log(messageObject);
+      $('#error-type').text("Error Type:");
+      $('#api-link-error').text("API Docs link:");
+      $('#error-message-3').html(messageObject["error-type"]);
+      $('#error-message').html(messageObject["documentation"]);
+      $('#error-message-2').text("There was an error with api promise");
     });
   });
 });
